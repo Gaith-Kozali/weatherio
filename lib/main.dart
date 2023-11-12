@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:weatherio/feauters/feauter_home/presentation/screens/splash_screen.dart';
+import 'package:weatherio/feauters/feauter_splash/splash_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:weatherio/feauters/feauter_home/presentation/widgets/details/details_button.dart';
+import 'feauters/feauter_home/presentation/screens/collecting_screen.dart';
+import 'feauters/feauter_home/presentation/screens/details_screen.dart';
 import 'feauters/feauter_home/presentation/screens/home_screen.dart';
 
 void main() {
@@ -15,11 +18,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(428, 926),
+      minTextAdapt: true,
+      splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
             debugShowCheckedModeBanner: false,
-            routes: {HomeScreen.route: (context) => const HomeScreen()},
-            home: const SplashScreen());
+            routes: {
+              DetailsScreen.route: (context) => const DetailsScreen(),
+              CollectingScreen.route:(context) => const CollectingScreen()
+            },
+            home:  const SplashScreen());
       },
     );
   }

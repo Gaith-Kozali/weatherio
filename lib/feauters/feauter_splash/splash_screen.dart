@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:weatherio/core/constrains/app_colors.dart';
 import 'package:weatherio/core/constrains/images_path.dart';
-import '../../../../core/constrains/app_string.dart';
-import '../widgets/splash_button.dart';
+import '../../core/constrains/app_string.dart';
+import '../../core/constrains/global_things.dart';
+import 'splash_button.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -35,11 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: AppColors.backGround)),
+        decoration: backGroundBox,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

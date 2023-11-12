@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:weatherio/core/constrains/app_colors.dart';
-import '../../../../core/constrains/app_fonts.dart';
-import '../../../../core/constrains/images_path.dart';
+import '../../../../../core/constrains/app_fonts.dart';
+import '../../../../../core/constrains/images_path.dart';
 
 class WeatherNow extends StatelessWidget {
   const WeatherNow({Key? key}) : super(key: key);
@@ -21,8 +21,16 @@ class WeatherNow extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('22°', style: AppFonts.poppins30),
-                Text('Friday, 3 NOV 2023| 10:00', style: AppFonts.poppins12),
+                Text(
+                  '22°',
+                  style: AppFonts.poppins30,
+                  maxLines: 1,
+                ),
+                Text(
+                  'Friday, 3 NOV 2023| 10:00',
+                  style: AppFonts.poppins12,
+                  maxLines: 1,
+                ),
                 Row(
                   children: [
                     Icon(Icons.location_on_outlined,
@@ -33,6 +41,7 @@ class WeatherNow extends StatelessWidget {
                     Text(
                       'Qena , Egypt',
                       style: AppFonts.poppins12,
+                      maxLines: 1,
                     )
                   ],
                 ),

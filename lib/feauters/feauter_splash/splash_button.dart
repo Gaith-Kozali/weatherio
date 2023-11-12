@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weatherio/core/constrains/app_colors.dart';
 import 'package:weatherio/core/constrains/app_fonts.dart';
+import 'package:weatherio/feauters/feauter_home/presentation/screens/collecting_screen.dart';
 import 'package:weatherio/feauters/feauter_home/presentation/screens/home_screen.dart';
-import '../../../../core/constrains/app_string.dart';
+import '../../core/constrains/app_string.dart';
 
 class SplashButton extends StatelessWidget {
   const SplashButton({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class SplashButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16).r)),
         onPressed: () {
-          Navigator.pushReplacementNamed(context, HomeScreen.route);
+          Navigator.pushReplacementNamed(context, CollectingScreen.route);
         },
         child: Container(
           width: 214.w,

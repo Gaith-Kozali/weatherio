@@ -32,7 +32,8 @@ class WeatherList extends StatelessWidget {
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
                 '21°C',
-                style: AppFonts.poppins20
+                style: AppFonts.poppins20,
+                maxLines: 1,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16).h,
@@ -45,6 +46,7 @@ class WeatherList extends StatelessWidget {
               Text(
                 '6 AM',
                 style: AppFonts.poppins20,
+                maxLines: 1,
               )
             ]),
           );

@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:weatherio/core/constrains/app_colors.dart';
 import 'package:weatherio/core/constrains/app_fonts.dart';
 import 'package:weatherio/core/constrains/images_path.dart';
-import '../../../../core/constrains/app_string.dart';
+import '../../../../../core/constrains/app_string.dart';
 
 class AqiCircle extends StatelessWidget {
   const AqiCircle({Key? key}) : super(key: key);
