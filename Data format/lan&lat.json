@@ -1,0 +1,39 @@
+
+[
+  {
+    "name":"Damascus",
+    "local_names":{},
+    "lat":33.5130695,
+    "lon":36.3095814,
+    "country":"SY",
+    "state":"Damascus Governorate"
+  },
+  {
+    "name":"Damascus",
+    "lat":45.4176261,
+    "lon":-122.458985,
+    "country":"US",
+    "state":"Oregon"
+  },
+  {
+    "name":"Damascus",
+    "lat":39.2884381,
+    "lon":-77.2038717,
+    "country":"US",
+    "state":"Maryland"
+  },
+  {
+    "name":"Damascus",
+    "lat":36.6337272,
+    "lon":-81.7837303,
+    "country":"US",
+    "state":"Virginia"
+  },
+  {
+    "name":"Damascus",
+    "lat":35.3613795,
+    "lon":-92.41464301316265,
+    "country":"US",
+    "state":"Arkansas"
+  }
+]

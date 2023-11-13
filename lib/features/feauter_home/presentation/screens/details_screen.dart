@@ -14,17 +14,16 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
         body: Container(
       decoration: backGroundBox,
-      child: Center(
+      child:  Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children:  [
-          const  WeatherNow(),
+          const WeatherNow(),
           const WeatherList(),
           const AqiCircle(),
           const DetailsButton(),
-          SizedBox(
-            height: 80.h,
-          )
+          SizedBox(height: 70.h,)
+
         ],
       )),
     ));

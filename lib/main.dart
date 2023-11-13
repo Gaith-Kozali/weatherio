@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:weatherio/feauters/feauter_splash/splash_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:weatherio/feauters/feauter_home/presentation/widgets/details/details_button.dart';
-import 'feauters/feauter_home/presentation/screens/collecting_screen.dart';
-import 'feauters/feauter_home/presentation/screens/details_screen.dart';
-import 'feauters/feauter_home/presentation/screens/home_screen.dart';
+
+import 'features/feauter_home/presentation/screens/collecting_screen.dart';
+import 'features/feauter_home/presentation/screens/details_screen.dart';
+import 'features/feauter_splash/splash_screen.dart';
+
 
 void main() {
   runApp(const MyApp());

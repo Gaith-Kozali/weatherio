@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weatherio/core/constrains/app_colors.dart';
 import 'package:weatherio/core/constrains/app_fonts.dart';
+import 'package:weatherio/features/feauter_home/data/repositories_imp/weather_repository_imp.dart';
 import '../../../../../core/constrains/app_string.dart';
+import '../../../data/data_source/get_remote_weather.dart';
+import '../../../domain/use_cases/get_weather_usecase.dart';
 
 class DetailsButton extends StatelessWidget {
   const DetailsButton({Key? key}) : super(key: key);
@@ -14,7 +17,12 @@ class DetailsButton extends StatelessWidget {
             padding: EdgeInsets.zero,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20).r)),
-        onPressed: () {},
+        onPressed: () {
+          GetWeatherUseCase(
+            weatherRepository:
+                WeatherRepositoryImp(getRemoteWeather: GetRemoteWeatherImp()),
+          ).call("Damascus");
+        },
         child: Container(
           width: 279.w,
           height: 58.h,
@@ -22,21 +30,19 @@ class DetailsButton extends StatelessWidget {
           decoration: BoxDecoration(
               gradient: const LinearGradient(colors: AppColors.backGround),
               borderRadius: BorderRadius.circular(20).r),
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-              children: [
-                Text(
-                  AppString.homeButtonText,
-                  style: AppFonts.poppins20,
-                  maxLines: 1,
-                ),
-                Icon(
-                  Icons.arrow_forward_ios_outlined,
-                  color: Colors.white,
-                  size: 22.spMin,
-                )
-              ]),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Text(
+              AppString.homeButtonText,
+              style: AppFonts.poppins20,
+              maxLines: 1,
+            ),
+            Icon(
+              Icons.arrow_forward_ios_outlined,
+              color: Colors.white,
+              size: 22.spMin,
+            )
+          ]),
         ));
   }
 }

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:weatherio/core/constrains/global_things.dart';
-import 'package:weatherio/feauters/feauter_home/presentation/screens/details_screen.dart';
-import 'package:weatherio/feauters/feauter_home/presentation/screens/home_screen.dart';
 import '../../../../core/constrains/app_colors.dart';
 import '../../../../core/constrains/images_path.dart';
+import 'details_screen.dart';
+import 'home_screen.dart';
 
 class CollectingScreen extends StatefulWidget {
   const CollectingScreen({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _CollectingScreenState extends State<CollectingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(child: Stack(children: [
-        screen[currentScreen],
+         screen[currentScreen],
         Positioned(
             bottom: 10.h,
             left: 0,
