@@ -17,12 +17,7 @@ class DetailsButton extends StatelessWidget {
             padding: EdgeInsets.zero,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20).r)),
-        onPressed: () {
-          GetWeatherUseCase(
-            weatherRepository:
-                WeatherRepositoryImp(getRemoteWeather: GetRemoteWeatherImp()),
-          ).call("Damascus");
-        },
+        onPressed: () {},
         child: Container(
           width: 279.w,
           height: 58.h,

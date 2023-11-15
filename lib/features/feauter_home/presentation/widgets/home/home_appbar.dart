@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:weatherio/features/feauter_home/presentation/screens/collecting_screen.dart';
 
 import '../../../../../core/constrains/app_colors.dart';
 import '../../../../../core/constrains/app_fonts.dart';
@@ -18,7 +19,7 @@ class HomeAppBar extends StatelessWidget {
                 size: 16.spMin, color: AppColors.white),
             SizedBox(width: 15.w),
             Text(
-              'Qena , Egypt',
+              '${weather[0].location.country} , ${weather[0].location.city}',
               style: AppFonts.poppins20,
             ),
           ],

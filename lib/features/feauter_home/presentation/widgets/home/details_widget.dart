@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:weatherio/features/feauter_home/presentation/screens/collecting_screen.dart';
 import '../../../../../core/constrains/app_fonts.dart';
 
 class DetailsWidget extends StatelessWidget {
   const DetailsWidget({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +30,7 @@ class DetailsWidget extends StatelessWidget {
                 Image.asset("assets/Precipitation.png",
                     width: 24.w, height: 24.h),
                 Text(
-                  '30% ',
+                  '${weather[0].precipitation}% ',
                   style: AppFonts.poppins14,
                   maxLines: 1,
                 ),
@@ -48,7 +47,8 @@ class DetailsWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset("assets/Humidity.png", width: 24.w, height: 24.h),
-                Text('30% ', style: AppFonts.poppins14, maxLines: 1),
+                Text('${weather[0].humidity}% ',
+                    style: AppFonts.poppins14, maxLines: 1),
                 Text('Humidity',
                     style: AppFonts.poppins12
                         .copyWith(fontWeight: FontWeight.w600),
@@ -62,7 +62,8 @@ class DetailsWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset("assets/wind.png", width: 24.w, height: 24.h),
-                Text('9km/h', style: AppFonts.poppins14, maxLines: 1),
+                Text('${weather[0].windSpeed}km/h',
+                    style: AppFonts.poppins14, maxLines: 1),
                 Text('Wind Speed',
                     style: AppFonts.poppins12
                         .copyWith(fontWeight: FontWeight.w600),

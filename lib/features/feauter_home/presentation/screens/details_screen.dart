@@ -11,21 +11,30 @@ class DetailsScreen extends StatelessWidget {
   static const String route = "DetailsScreen";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-      decoration: backGroundBox,
-      child:  Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children:  [
-          const WeatherNow(),
-          const WeatherList(),
-          const AqiCircle(),
-          const DetailsButton(),
-          SizedBox(height: 70.h,)
-
-        ],
-      )),
+    return SafeArea(
+        child: Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0),
+      body: Container(
+        decoration: backGroundBox,
+        height: 926.h,
+        child: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            SizedBox(
+              height: 30.h,
+            ),
+            const WeatherNow(),
+            const WeatherList(),
+            const AqiCircle(),
+            const DetailsButton(),
+            SizedBox(
+              height: 20.h,
+            )
+          ],
+        )),
+      ),
     ));
   }
 }

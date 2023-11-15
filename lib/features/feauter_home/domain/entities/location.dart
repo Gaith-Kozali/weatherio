@@ -16,4 +16,7 @@ class Location {
         lat: json[0]['lat'].toString(),
         lon: json[0]['lon'].toString());
   }
+  Map<String, dynamic> toJson() {
+    return {'country': country, 'city': city, 'lon': lon, 'lat': lat};
+  }
 }
