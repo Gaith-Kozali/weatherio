@@ -26,7 +26,7 @@ class _CollectingScreenState extends State<CollectingScreen> {
     HomeScreen(),
     HomeScreen(),
     HomeScreen(),
-    DetailsScreen()
+    HomeScreen ()
   ];
 
 
