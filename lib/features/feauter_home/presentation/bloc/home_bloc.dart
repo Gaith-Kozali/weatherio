@@ -24,6 +24,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
                   "No Data in cached And internet Check the connection of internet"))
               : emit(GetWeatherState(weather, isConnect));
         });
+      }else if(event is TomoTodayEvent){
+        emit(TomoTodayState(event.day));
       }
     });
   }

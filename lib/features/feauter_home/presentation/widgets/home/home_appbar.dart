@@ -13,7 +13,6 @@ String cityName = "Damascus";
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -62,7 +61,6 @@ _chooseCityWidget(BuildContext context) {
                   onCountryChanged: (value) {},
                   onStateChanged: (value) {},
                   onCityChanged: (value) {
-                    print(value);
                     cityName = value;
                   },
                 )),

@@ -11,7 +11,7 @@ BoxDecoration get backGroundBox => const BoxDecoration(
           Color(0xFFECABFC),
         ]));
 
-Widget selected(Widget ic) {
+Widget selectedBottomNavigation(Widget ic) {
   return Container(
       width: 53.w,
       height: 53.h,

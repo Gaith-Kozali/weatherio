@@ -24,3 +24,7 @@ class NoDataAndInterState extends HomeState{
   NoDataAndInterState(this.message);
   String message ;
 }
+class TomoTodayState extends HomeState{
+  TomoTodayState(this.day);
+  int day;
+}

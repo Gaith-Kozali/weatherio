@@ -22,12 +22,12 @@ class WeatherNow extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  '${weather[0].temperature}°',
+                  '${weather[dayDisplay].temperature}°',
                   style: AppFonts.poppins30,
                   maxLines: 1,
                 ),
                 Text(
-                  '${weather[0].time} , ${weather[0].date}',
+                  '${weather[dayDisplay].time} , ${weather[0].date}',
                   style: AppFonts.poppins12,
                   maxLines: 1,
                 ),
@@ -39,7 +39,7 @@ class WeatherNow extends StatelessWidget {
                       width: 15.w,
                     ),
                     Text(
-                      '${weather[0].location.country} , ${weather[0].location.city}',
+                      '${weather[dayDisplay].location.country} , ${weather[0].location.city}',
                       style: AppFonts.poppins12,
                       maxLines: 1,
                     )

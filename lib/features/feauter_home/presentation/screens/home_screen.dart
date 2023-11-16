@@ -10,10 +10,9 @@ import '../../../../core/constrains/images_path.dart';
 import '../bloc/home_bloc.dart';
 import '../widgets/home/details_widget.dart';
 import '../widgets/home/switch_widget.dart';
+import '../widgets/message_state_widget.dart';
 import '../widgets/weather_list.dart';
 import 'collecting_screen.dart';
-
-
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,38 +24,62 @@ class HomeScreen extends StatelessWidget {
       BlocProvider.of<HomeBloc>(context).add(GetWeatherEvent(cityName));
     }
 
-    return Scaffold(
-      body: RefreshIndicator(
-          color: AppColors.purple,
-          onRefresh: refresh,
-          child: SingleChildScrollView(
-              physics: const ClampingScrollPhysics(),
-              child: Container(
-                decoration: backGroundBox,
-                height: 890.h,
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const HomeAppBar(),
-                      SvgPicture.asset(
-                        ImagesPath.logoPath,
-                        width: 226.w,
-                        height: 176.h,
-                      ),
-                      SizedBox(height: 10.h),
-                      Text(weather[0].temperature, style: AppFonts.poppins30),
-                      Text(
-                        weather[0].date,
-                        style: AppFonts.poppins12,
-                      ),
-                      const DetailsWidget(),
-                      const SwitchWidget(),
-                      Padding(
-                        padding: EdgeInsets.only(top: 31.h),
-                        child: const WeatherList(),
-                      ),
-                    ]),
-              ))),
+    return BlocConsumer<HomeBloc, HomeState>(
+      builder: (context, state) {
+        if (state is GetWeatherState ||
+            state is ErrorState ||
+            state is TomoTodayState) {
+          weather = state is GetWeatherState ? state.weather : weather;
+          dayDisplay = state is TomoTodayState ? state.day : dayDisplay;
+          return Scaffold(
+            body: RefreshIndicator(
+                color: AppColors.purple,
+                onRefresh: refresh,
+                child: SingleChildScrollView(
+                    physics: const ClampingScrollPhysics(),
+                    child: Container(
+                      decoration: backGroundBox,
+                      height: 890.h,
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const HomeAppBar(),
+                            SvgPicture.asset(
+                              ImagesPath.logoPath,
+                              width: 226.w,
+                              height: 176.h,
+                            ),
+                            SizedBox(height: 10.h),
+                            Text('${weather[dayDisplay].temperature}°',
+                                style: AppFonts.poppins30),
+                            Text(
+                              weather[dayDisplay].date,
+                              style: AppFonts.poppins12,
+                            ),
+                            const DetailsWidget(),
+                            const SwitchWidget(),
+                            Padding(
+                              padding: EdgeInsets.only(top: 31.h),
+                              child: WeatherList(),
+                            ),
+                          ]),
+                    ))),
+          );
+        } else if (state is WaitState) {
+          return waitingWidget();
+        } else if (state is NoDataAndInterState) {
+          return noDataAndInternet(context, state.message);
+        } else {
+          return const SizedBox();
+        }
+      },
+      listener: (context, state) {
+        if (state is ErrorState) {
+          errorMessage(context, state.message);
+        } else if (state is GetWeatherState && state.isConnect == false) {
+          noInterMessage(context);
+        }
+      },
     );
   }
 }
