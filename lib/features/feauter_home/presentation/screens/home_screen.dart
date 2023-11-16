@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:weatherio/features/feauter_home/presentation/widgets/home/home_appbar.dart';
 import '../../../../core/constrains/app_colors.dart';
 import '../../../../core/constrains/app_fonts.dart';
@@ -23,7 +22,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future<void> refresh() async {
-      BlocProvider.of<HomeBloc>(context).add(GetWeatherEvent("Damascus"));
+      BlocProvider.of<HomeBloc>(context).add(GetWeatherEvent(cityName));
     }
 
     return Scaffold(

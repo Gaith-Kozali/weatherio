@@ -6,6 +6,7 @@ import 'package:weatherio/features/feauter_splash/splash_screen.dart';
 import 'core/initialize_object/initialize_home.dart';
 import 'features/feauter_home/presentation/screens/collecting_screen.dart';
 import 'features/feauter_home/presentation/screens/details_screen.dart';
+import 'features/feauter_home/presentation/widgets/home/home_appbar.dart';
 
 
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return BlocProvider(
-          create: (context) => sl<HomeBloc>()..add(GetWeatherEvent("damascus")),
+          create: (context) => sl<HomeBloc>()..add(GetWeatherEvent(cityName)),
           child: MaterialApp(
               debugShowCheckedModeBanner: false,
               routes: {
