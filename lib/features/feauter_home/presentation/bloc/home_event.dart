@@ -5,5 +5,7 @@ abstract class HomeEvent {}
 
 class GetWeatherEvent extends HomeEvent {
   GetWeatherEvent(this.city);
-    String city;
+  String city;
 }
+
+

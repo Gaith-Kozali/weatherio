@@ -7,6 +7,8 @@ import 'core/initialize_object/initialize_home.dart';
 import 'features/feauter_home/presentation/screens/collecting_screen.dart';
 import 'features/feauter_home/presentation/screens/details_screen.dart';
 
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await InitializeHome().injection();
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
                 DetailsScreen.route: (context) => const DetailsScreen(),
                 CollectingScreen.route: (context) => const CollectingScreen()
               },
-              home: SplashScreen()),
+              home: const SplashScreen()),
         );
       },
     );

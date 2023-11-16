@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:weatherio/features/feauter_home/presentation/widgets/home/home_appbar.dart';
 import '../../../../core/constrains/app_colors.dart';
 import '../../../../core/constrains/app_fonts.dart';
@@ -12,6 +13,8 @@ import '../widgets/home/details_widget.dart';
 import '../widgets/home/switch_widget.dart';
 import '../widgets/weather_list.dart';
 import 'collecting_screen.dart';
+
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -29,7 +32,6 @@ class HomeScreen extends StatelessWidget {
           onRefresh: refresh,
           child: SingleChildScrollView(
               physics: const ClampingScrollPhysics(),
-              clipBehavior: Clip.hardEdge,
               child: Container(
                 decoration: backGroundBox,
                 height: 890.h,

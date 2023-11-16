@@ -26,14 +26,13 @@ class GetRemoteWeatherImp implements GetRemoteWeather {
     String api =
         "https://api.openweathermap.org/data/2.5/forecast?lat=${location.lat}&lon=${location.lon}&appid=1189e7851426f32fc69c64b39163e604";
     final response = await http.get(Uri.parse(api));
-    final data = json.decode(response.body);
+    List data = json.decode(response.body)['list'];
 
-    print("the boddddddddddddddddddyyyy  ${response.body}");
+    print("the boddddddddddddddddddyyyy  ${data}");
 
     List<Weather> weather =
-        List.generate(24, (index) => Weather.fromJson(data, location, index));
-    print(
-        "weather listtttttttttttttttttttttttttttttttttt  from remote data $weather");
+        data.map((e) => Weather.fromJson(e, location)).toList();
+
     return weather;
   }
 }

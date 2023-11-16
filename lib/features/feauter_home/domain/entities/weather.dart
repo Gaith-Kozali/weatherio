@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:intl/intl.dart';
 import 'package:weatherio/features/feauter_home/domain/entities/location.dart';
 
@@ -39,21 +38,19 @@ class Weather {
     return (time, sDate);
   }
 
-  factory Weather.fromJson(final json, Location location, int index) {
-    final (time, date) = format(json['list'][index]['dt_txt']);
+  factory Weather.fromJson(Map<String, dynamic> json, Location location) {
+    final (time, date) = format(json['dt_txt']);
     return Weather(
-        description: json['list'][index]['weather'][0]['description'],
-        temperature: kelvinToCelsius(json['list'][index]['main']['temp']),
-        temperatureMax:
-            kelvinToCelsius(json['list'][index]['main']['temp_max']),
-        temperatureMin:
-            kelvinToCelsius(json['list'][index]['main']['temp_min']),
-        humidity: json['list'][index]['main']['humidity'].toString(),
-        image: json['list'][index]['weather'][0]['icon'],
-        windSpeed: json['list'][index]['wind']['speed'].toString(),
+        description: json['weather'][0]['description'],
+        temperature: kelvinToCelsius(json['main']['temp']),
+        temperatureMax: kelvinToCelsius(json['main']['temp_max']),
+        temperatureMin: kelvinToCelsius(json['main']['temp_min']),
+        humidity: json['main']['humidity'].toString(),
+        image: json['weather'][0]['icon'],
+        windSpeed: json['wind']['speed'].toString(),
         date: date,
         time: time,
-        precipitation: json['list'][index]['pop'].toString(),
+        precipitation: json['pop'].toString(),
         location: location);
   }
 
