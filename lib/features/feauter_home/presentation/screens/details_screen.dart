@@ -15,26 +15,31 @@ class DetailsScreen extends StatelessWidget {
         child: Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0),
-      body: Container(
-        decoration: backGroundBox,
-        height: 926.h,
-        child: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SizedBox(
-              height: 30.h,
-            ),
-            const WeatherNow(),
-            const WeatherList(),
-            const AqiCircle(),
-            const DetailsButton(),
-            SizedBox(
-              height: 20.h,
-            )
-          ],
-        )),
-      ),
+      body: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Container(
+            decoration: backGroundBox,
+            height: 926.h,
+            child: Center(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  height: 30.h,
+                ),
+                const WeatherNow(),
+                const WeatherList(),
+                SizedBox(
+                  height: 20.h,
+                ),
+                const AqiCircle(),
+                const DetailsButton(),
+                SizedBox(
+                  height: 10.h,
+                )
+              ],
+            )),
+          )),
     ));
   }
 }

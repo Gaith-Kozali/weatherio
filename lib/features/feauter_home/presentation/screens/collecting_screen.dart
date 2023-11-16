@@ -7,7 +7,6 @@ import 'package:weatherio/features/feauter_home/domain/entities/weather.dart';
 import '../../../../core/constrains/app_colors.dart';
 import '../../../../core/constrains/images_path.dart';
 import '../bloc/home_bloc.dart';
-import 'details_screen.dart';
 import 'home_screen.dart';
 
 List<Weather> weather = [];
@@ -26,10 +25,8 @@ class _CollectingScreenState extends State<CollectingScreen> {
     HomeScreen(),
     HomeScreen(),
     HomeScreen(),
-    HomeScreen ()
+    HomeScreen()
   ];
-
-
 
   Widget get buttonNav => Positioned(
       bottom: 10.h,

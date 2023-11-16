@@ -12,18 +12,21 @@ class GetLocalWeatherImp implements GetLocalWeather {
   SharedPreferences sharedPreferences;
   @override
   void setWeatherData(List<Weather> data) async {
-    final jsonString = jsonEncode(data);
-    await sharedPreferences.setString("weather_data", jsonString);
-    print("sssssssssssssssseeeet weather in locccccccccccccaaaalllll");
+    List<String> jsonString = data.map((e) => json.encode(e)).toList();
+    await sharedPreferences.setStringList("weather_data", jsonString);
+    print(
+        "sssssssssssssssseeeet weather in locccccccccccccaaaalllll $jsonString");
   }
 
   @override
   List<Weather> getWeatherData() {
-    List<Weather> weather = [];
+    List<Weather>? weather = [];
     if (sharedPreferences.containsKey("weather_data")) {
-      String? data = sharedPreferences.getString("weather_data");
-      weather = jsonDecode(data!);
-      print("llllllllllllllllllllllloooooooocaallllllllllllllocal${weather}");
+      List<String>? data = sharedPreferences.getStringList("weather_data");
+      weather =
+          data!.map((e) => Weather.fromJsonCachedData(json.decode(e))).toList();
+      print(
+          "***************************************************************************  ${weather} ddddddddddddddddddddddaaaaa${data}");
       return weather;
     } else {
       return weather;

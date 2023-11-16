@@ -27,7 +27,7 @@ class Weather {
   String image;
   Location location;
 
-  static String kelvinToCelsius(double temp) {
+  static String kelvinToCelsius(dynamic temp) {
     return (temp - 273.15).round().toString();
   }
 
@@ -35,7 +35,7 @@ class Weather {
     DateTime date = DateTime.parse(d);
     String sDate = DateFormat('EEE, M/d/y').format(date).toString();
     String time = DateFormat('h aa').format(date).toString();
-    print("////////////////////////////////////////$sDate   $time");
+
     return (time, sDate);
   }
 
@@ -57,19 +57,24 @@ class Weather {
         location: location);
   }
 
-  factory Weather.fromJsonForCached(Map<String, dynamic> json, int index) {
+  factory Weather.fromJsonCachedData(Map<String, dynamic> json) {
     return Weather(
-      description: json['description'][index],
-      temperature: json['temperature'][index],
-      temperatureMin: json['temperatureMin'][index],
-      temperatureMax: json['temperatureMax'][index],
-      windSpeed: json['windSpeed'][index],
-      humidity: json['humidity'][index],
-      precipitation: json['precipitation'][index],
-      date: json['date'][index],
-      time: json['time'][index],
-      image: json['image'][index],
-      location: Location.fromJson(json['location'][index]),
+      description: json['description'],
+      temperature: json['temperature'],
+      temperatureMin: json['temperatureMin'],
+      temperatureMax: json['temperatureMax'],
+      windSpeed: json['windSpeed'],
+      humidity: json['humidity'],
+      precipitation: json['precipitation'],
+      date: json['date'],
+      time: json['time'],
+      image: json['image'],
+      location: Location(
+        country: json['location']['country'],
+        city: json['location']['city'],
+        lon: json['location']['lon'],
+        lat: json['location']['lat'],
+      ),
     );
   }
 

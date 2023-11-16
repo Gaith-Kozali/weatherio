@@ -23,36 +23,39 @@ class HomeScreen extends StatelessWidget {
       BlocProvider.of<HomeBloc>(context).add(GetWeatherEvent("Damascus"));
     }
 
-    return Scaffold(body: RefreshIndicator(
-        color: AppColors.purple,
-        onRefresh: refresh,
-        child: SingleChildScrollView(
-            physics: const ClampingScrollPhysics(),
-            clipBehavior: Clip.hardEdge,
-            child: Container(
-              decoration: backGroundBox,
-              height: 926.h,
-              child:
-              Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-                const HomeAppBar(),
-                SvgPicture.asset(
-                  ImagesPath.logoPath,
-                  width: 226.w,
-                  height: 176.h,
-                ),
-                SizedBox(height: 10.h),
-                Text(weather[0].temperature, style: AppFonts.poppins30),
-                Text(
-                  weather[0].date,
-                  style: AppFonts.poppins12,
-                ),
-                const DetailsWidget(),
-                const SwitchWidget(),
-                Padding(
-                  padding: EdgeInsets.only(top: 31.h),
-                  child: const WeatherList(),
-                ),
-              ]),
-            ))),);
+    return Scaffold(
+      body: RefreshIndicator(
+          color: AppColors.purple,
+          onRefresh: refresh,
+          child: SingleChildScrollView(
+              physics: const ClampingScrollPhysics(),
+              clipBehavior: Clip.hardEdge,
+              child: Container(
+                decoration: backGroundBox,
+                height: 890.h,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const HomeAppBar(),
+                      SvgPicture.asset(
+                        ImagesPath.logoPath,
+                        width: 226.w,
+                        height: 176.h,
+                      ),
+                      SizedBox(height: 10.h),
+                      Text(weather[0].temperature, style: AppFonts.poppins30),
+                      Text(
+                        weather[0].date,
+                        style: AppFonts.poppins12,
+                      ),
+                      const DetailsWidget(),
+                      const SwitchWidget(),
+                      Padding(
+                        padding: EdgeInsets.only(top: 31.h),
+                        child: const WeatherList(),
+                      ),
+                    ]),
+              ))),
+    );
   }
 }
