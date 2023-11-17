@@ -5,10 +5,12 @@ import 'package:weatherio/core/constrains/global_things.dart';
 import 'package:weatherio/features/feauter_home/domain/entities/weather.dart';
 import '../../../../core/constrains/app_colors.dart';
 import '../../../../core/constrains/images_path.dart';
+import '../../../feauter_ai_system/presentation/screens/ai_system.dart';
+import '../../../feauter_search/presentation/screens/search_screens.dart';
 import 'home_screen.dart';
 
 List<Weather> weather = [];
-int dayDisplay =0 ;
+int dayDisplay = 0;
 
 class CollectingScreen extends StatefulWidget {
   const CollectingScreen({Key? key}) : super(key: key);
@@ -20,10 +22,10 @@ class CollectingScreen extends StatefulWidget {
 class _CollectingScreenState extends State<CollectingScreen> {
   int currentScreen = 0;
 
-  List<Widget> screen = [
+  List<Widget> screen = const [
     HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    AiSystemScreen(),
+    SearchScreens(),
     HomeScreen(),
     HomeScreen()
   ];

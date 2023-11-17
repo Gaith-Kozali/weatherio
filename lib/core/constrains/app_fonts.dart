@@ -16,6 +16,18 @@ class AppFonts {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle poppins16 = GoogleFonts.poppins(
+    color: AppColors.white,
+    fontSize: 16.spMin,
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle poppins18 = GoogleFonts.poppins(
+    color: AppColors.white,
+    fontSize: 18.spMin,
+    fontWeight: FontWeight.w400,
+  );
+
   static TextStyle poppins20 = GoogleFonts.poppins(
     color: Colors.white,
     fontSize: 20.spMin,
@@ -24,6 +36,12 @@ class AppFonts {
   static TextStyle poppins20W600 = GoogleFonts.poppins(
     color: Colors.white,
     fontSize: 20.spMin,
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle poppins25 = GoogleFonts.poppins(
+    color: AppColors.white,
+    fontSize: 25.spMin,
     fontWeight: FontWeight.w600,
   );
 
@@ -43,3 +61,6 @@ class AppFonts {
     fontWeight: FontWeight.w700,
   );
 }
+
+
+

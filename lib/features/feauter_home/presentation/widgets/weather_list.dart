@@ -8,7 +8,7 @@ import 'package:weatherio/features/feauter_home/presentation/screens/details_scr
 import '../../../../core/constrains/images_path.dart';
 
 class WeatherList extends StatelessWidget {
-  WeatherList({
+  const WeatherList({
     Key? key,
   }) : super(key: key);
 

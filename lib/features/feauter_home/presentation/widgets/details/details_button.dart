@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weatherio/core/constrains/app_colors.dart';
 import 'package:weatherio/core/constrains/app_fonts.dart';
-import 'package:weatherio/features/feauter_home/data/repositories_imp/weather_repository_imp.dart';
 import '../../../../../core/constrains/app_string.dart';
-import '../../../data/data_source/get_remote_weather.dart';
-import '../../../domain/use_cases/get_weather_usecase.dart';
+import '../../../../feature_daysforcast/presentation/screens/home_dayforcast.dart';
 
 class DetailsButton extends StatelessWidget {
   const DetailsButton({Key? key}) : super(key: key);
@@ -17,7 +15,9 @@ class DetailsButton extends StatelessWidget {
             padding: EdgeInsets.zero,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20).r)),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(HomeDayForCast.route);
+        },
         child: Container(
           width: 279.w,
           height: 58.h,
