@@ -60,7 +60,7 @@ class _SwitchWidgetState extends State<SwitchWidget> {
                     });
                   },
                 ),
-          dayDisplay == 8
+          dayDisplay == nextDay
               ? selected(
                   Center(
                     child: Text(
