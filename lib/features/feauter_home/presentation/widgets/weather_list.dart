@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:weatherio/core/constrains/app_colors.dart';
 import 'package:weatherio/core/constrains/app_fonts.dart';
-import 'package:weatherio/features/feauter_home/presentation/bloc/home_bloc.dart';
 import 'package:weatherio/features/feauter_home/presentation/screens/collecting_screen.dart';
 import 'package:weatherio/features/feauter_home/presentation/screens/details_screen.dart';
 import '../../../../core/constrains/images_path.dart';
 
 class WeatherList extends StatelessWidget {
-  WeatherList({Key? key,}) : super(key: key);
+  WeatherList({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // the api give me 8 weather details for each
     // 24 h and when next 3 hours come it is remove the old one
     // and i want to display only the data of this day in the list
-    int count = 8 - DateTime.now().hour ~/ 3;
+    int count = dayDisplay == 0 ? 8 - DateTime.now().hour ~/ 3 : 8;
+    print("ccccccccccccccccccccccccccccccccccccccccccccccooooount $count");
     return SizedBox(
       height: 198.h,
       width: 396.w,
