@@ -6,6 +6,7 @@
 // in cache memory to get it if no internet connection
 // and tell the user if have error in connection or don't have internet
 // and handle the api and dependency injection and core folder
+// can make refresh of data in the home page
 // make button to choose the user city in any location in the world and show the information
 // and the clean architecture
 
