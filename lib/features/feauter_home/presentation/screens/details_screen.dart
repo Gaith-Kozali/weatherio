@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weatherio/features/feauter_home/presentation/bloc/home_bloc.dart';
-import 'package:weatherio/features/feauter_home/presentation/screens/home_screen.dart';
 import '../../../../core/constrains/global_things.dart';
 import '../widgets/details/aqi_circle.dart';
 import '../widgets/details/details_button.dart';
