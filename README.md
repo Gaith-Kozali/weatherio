@@ -25,7 +25,7 @@ I use the following package :
 -internet_connection_checker: ^1.0.0+1
 -country_state_city_picker: ^1.2.8
 
-Some picture :
+Some pictures :
 
 ![Screenshot_20231116_001452](https://github.com/Gaith-Kozali/weatherio/assets/142360873/36d71740-0077-4304-ad0e-a613970fe503)
 
